@@ -136,7 +136,6 @@ while (i <= num)
     i++;
 }
 
-
 if (logic)
 {
     Console.WriteLine("Нет чётных чисел!");
