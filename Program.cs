@@ -46,9 +46,6 @@
 // a = 2 b = 10 -> max = 10
 // a = -9 b = -3 -> max = -3
 
-// int num1, num2, Numbers;
-// int newNumbers(,)
-// int Numbers = newNumbers(num1, num2);
 
             Console.WriteLine("Введите первое число: ");
             int num1 = Convert.ToInt32(Console.ReadLine());
@@ -66,7 +63,7 @@
             {
                 Console.WriteLine("Второе число " + num2 + " больше чем первое " + num1);
             }
-            // break;
+          
 
 
-// newNumbers(num1, num2);
+
