@@ -143,14 +143,39 @@
 
 
 
+
+
+// Seminar 2
 // Задача 10: Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа.
-	// 456 -> 5
-	// 782 -> 8
-	// 918 -> 1
-	
-	Console.Clear();	
-	Console.Write("Введите трёхзначное число: ");
-	int newNumber = Convert.ToInt32(Console.ReadLine()); //read from console
-	string resultNumber = Convert.ToString(newNumber); // convert to string
-	Console.WriteLine("вторая цифра этого числа -> "+resultNumber[1]); // indexes start from 0, so second index equal to 1.
+// 456 -> 5
+// 782 -> 8
+// 918 -> 1
+
+// Console.Clear();	
+// Console.Write("Введите трёхзначное число: ");
+// int newNumber = Convert.ToInt32(Console.ReadLine()); //read from console
+// string resultNumber = Convert.ToString(newNumber); // convert to string
+// Console.WriteLine("вторая цифра этого числа -> "+resultNumber[1]); // indexes start from 0, so second index equal to 1.
+
+
+
+// Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
+// 645 -> 5
+// 78 -> третьей цифры нет
+// 32679 -> 6
+
+
+Console.Clear();
+
+Console.Write("Введите число: ");
+int userNumber = Convert.ToInt32(Console.ReadLine());
+string userNumberText = Convert.ToString(userNumber);
+if (userNumberText.Length > 2)
+{
+    Console.WriteLine("третья цифра -> " + userNumberText[2]);
+}
+else
+{
+    Console.WriteLine("-> третьей цифры нет");
+}
 
