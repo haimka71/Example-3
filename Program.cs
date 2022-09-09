@@ -165,17 +165,44 @@
 // 32679 -> 6
 
 
+// Console.Clear();
+
+// Console.Write("Введите число: ");
+// int userNumber = Convert.ToInt32(Console.ReadLine());
+// string userNumberText = Convert.ToString(userNumber);
+// if (userNumberText.Length > 2)
+// {
+//     Console.WriteLine("третья цифра -> " + userNumberText[2]);
+// }
+// else
+// {
+//     Console.WriteLine("-> третьей цифры нет");
+// }
+
+
+//Задача 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
+// 6 -> да
+// 7 -> да
+// 1 -> нет
+
+
 Console.Clear();
 
-Console.Write("Введите число: ");
-int userNumber = Convert.ToInt32(Console.ReadLine());
-string userNumberText = Convert.ToString(userNumber);
-if (userNumberText.Length > 2)
+Console.Write("Введите порядковый номер дня недели: ");
+int dayNumber = Convert.ToInt32(Console.ReadLine());
+
+
+void CheckTheDayOfTheWeek(int dayNumber)
 {
-    Console.WriteLine("третья цифра -> " + userNumberText[2]);
-}
-else
-{
-    Console.WriteLine("-> третьей цифры нет");
+    if (dayNumber == 6 || dayNumber == 7)  // понравилось условие с логическим оператором, условным ИЛИ, мощно условие оптимизирует
+    {
+        Console.WriteLine("(этот день выходной) -> ура! согласен!");
+    }
+    else if (dayNumber < 1 || dayNumber > 7)
+    {
+        Console.WriteLine("упс, ошибочка вышла");
+    }
+    else Console.WriteLine("(этот день не выходной) -> сорри, идем на работу");
 }
 
+CheckTheDayOfTheWeek(dayNumber);
