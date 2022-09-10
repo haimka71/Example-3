@@ -180,29 +180,59 @@
 // }
 
 
-//Задача 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
-// 6 -> да
-// 7 -> да
-// 1 -> нет
+// //Задача 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
+// // 6 -> да
+// // 7 -> да
+// // 1 -> нет
 
+
+// Console.Clear();
+
+// Console.Write("Введите порядковый номер дня недели: ");
+// int dayNumber = Convert.ToInt32(Console.ReadLine());
+
+
+// void CheckTheDayOfTheWeek(int dayNumber)
+// {
+//     if (dayNumber == 6 || dayNumber == 7)  // понравилось условие с логическим оператором, условным ИЛИ, мощно условие оптимизирует
+//     {
+//         Console.WriteLine("(этот день выходной) -> ура! согласен!");
+//     }
+//     else if (dayNumber < 1 || dayNumber > 7)
+//     {
+//         Console.WriteLine("упс, ошибочка вышла");
+//     }
+//     else Console.WriteLine("(этот день не выходной) -> сорри, идем на работу");
+// }
+
+// CheckTheDayOfTheWeek(dayNumber);
+// // Каюсь, здесь мне помогали разобраться...
+
+
+
+
+// Семинар 3
+// Задача 19: Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
+// 14212 -> нет
+// 23432 -> да
+// 12821 -> да
 
 Console.Clear();
+Console.Write("Введите пятизначное число: "); 
+string? number = Console.ReadLine(); //
 
-Console.Write("Введите порядковый номер дня недели: ");
-int dayNumber = Convert.ToInt32(Console.ReadLine());
-
-
-void CheckTheDayOfTheWeek(int dayNumber)
+void CheckNumber(string number)
 {
-    if (dayNumber == 6 || dayNumber == 7)  // понравилось условие с логическим оператором, условным ИЛИ, мощно условие оптимизирует
-    {
-        Console.WriteLine("(этот день выходной) -> ура! согласен!");
-    }
-    else if (dayNumber < 1 || dayNumber > 7)
-    {
-        Console.WriteLine("упс, ошибочка вышла");
-    }
-    else Console.WriteLine("(этот день не выходной) -> сорри, идем на работу");
+  if (number[0]==number[4] && number[1]==number[3]) // если используем ИЛИ || - при вводе 45455 признает полиндромом!
+  {
+    Console.WriteLine($"Ваше число: {number} - палиндром.");
+  }
+  else Console.WriteLine($"Ваше число: {number} - не палиндром.");
 }
 
-CheckTheDayOfTheWeek(dayNumber);
+if (number!.Length == 5)
+{
+  CheckNumber(number);
+}
+else Console.WriteLine($"Введите корректное число (5 знаков!)");
+
