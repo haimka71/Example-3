@@ -212,27 +212,69 @@
 
 
 // Семинар 3
-// Задача 19: Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
+// ЗАДАЧА 19: Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом (число или текст, читаемый одинаково с обоих сторон).
 // 14212 -> нет
 // 23432 -> да
 // 12821 -> да
 
-Console.Clear();
-Console.Write("Введите пятизначное число: "); 
-string? number = Console.ReadLine(); //
+// Console.Clear();
+// Console.Write("Введите пятизначное число: "); 
+// string? number = Console.ReadLine(); // преобразование строчного (теста) значения в набор UTF символов
 
-void CheckNumber(string number)
-{
-  if (number[0]==number[4] && number[1]==number[3]) // если используем ИЛИ || - при вводе 45455 признает полиндромом!
-  {
-    Console.WriteLine($"Ваше число: {number} - палиндром.");
-  }
-  else Console.WriteLine($"Ваше число: {number} - не палиндром.");
-}
+// void CheckNumber(string number)
+// {
+//   if (number[0]==number[4] && number[1]==number[3]) // если используем ИЛИ || - при вводе 45455 признает полиндромом!
+//   {
+//     Console.WriteLine($"Ваше число: {number} - палиндром.");
+//   }
+//   else Console.WriteLine($"Ваше число: {number} - не палиндром.");
+// }
 
-if (number!.Length == 5)
-{
-  CheckNumber(number);
-}
-else Console.WriteLine($"Введите корректное число (5 знаков!)");
+// if (number!.Length == 5) //проверка 5-ти значное ли число
+// {
+//   CheckNumber(number);
+// }
+// else Console.WriteLine($"Введите корректное число (5 знаков!)");
+
+
+
+//ЗАДАЧА 23: Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
+	// 3 -> 1, 8, 27
+	// 5 -> 1, 8, 27, 64, 125
+	
+
+	Console.Clear();
+	Console.Write("Введите число: ");
+	int cube = Convert.ToInt32(Console.ReadLine());
+	
+
+	void Cube(int[] cube) // вводим не возвращающий метод Cube с аргументом в виде массива, имя cube
+    {
+	  int counter = 0;
+	  int length = cube.Length;
+	  while (counter <  length)
+      {
+	    cube[counter] = Convert.ToInt32(Math.Pow(counter, 3)); //MathPow метод Возвращает указанное число (counter), возведенное в указанную степень (3).
+	    counter++;
+	  }
+	}
+	
+
+	void PrintArray(int[] coll) // вводим не возвращающий метод PrintArray с аргументом в виде массива, имя coll
+    {
+	  int count = coll.Length;
+	  int index = 0;
+	  while(index < count)
+      {
+	    Console.Write(coll[index]+ " "); // " " вводим пробел
+	    index++;
+	  }
+	} 
+	
+	int[] array = new int[cube+1];
+    
+	Cube(array); // вызов метода Cube
+
+	PrintArray(array); // вызов метода PrintArray
+
 
