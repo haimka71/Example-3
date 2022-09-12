@@ -353,25 +353,25 @@
 // 9012 -> 12
 
 
-Console.Clear();
-Console.Write("Введите число : ");
-int number_1 = Convert.ToInt32(Console.ReadLine());
+// Console.Clear();
+// Console.Write("Введите число : ");
+// int number_1 = Convert.ToInt32(Console.ReadLine());
 
-int SumNumber(int number_1)
-{
+// int SumNumber(int number_1)
+// {
 
-    int counter = Convert.ToString(number_1).Length;
-    int temp = 0;
-    int result = 0;
+//     int counter = Convert.ToString(number_1).Length;
+//     int temp = 0;
+//     int result = 0;
 
-    for (int i = 0; i < counter; i++)
-    {
-        temp = number_1 - number_1 % 10;
-        result = result + (number_1 - temp);
-        number_1 = number_1 / 10;
-    }
-    return result;
-}
+//     for (int i = 0; i < counter; i++)
+//     {
+//         temp = number_1 - number_1 % 10;
+//         result = result + (number_1 - temp);
+//         number_1 = number_1 / 10;
+//     }
+//     return result;
+// }
 
-int sumNumber = SumNumber(number_1);
-Console.WriteLine("Сумма цифр в числе: " + sumNumber);
+// int sumNumber = SumNumber(number_1);
+// Console.WriteLine("Сумма цифр в числе: " + sumNumber);
