@@ -238,44 +238,44 @@
 
 
 
-//ЗАДАЧА 23: Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
-	// 3 -> 1, 8, 27
-	// 5 -> 1, 8, 27, 64, 125
+// //ЗАДАЧА 23: Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
+// 	// 3 -> 1, 8, 27
+// 	// 5 -> 1, 8, 27, 64, 125
 	
 
-	// Console.Clear();
-	// Console.Write("Введите число: ");
-	// int cube = Convert.ToInt32(Console.ReadLine());
+// 	Console.Clear();
+// 	Console.Write("Введите число: ");
+// 	int cube = Convert.ToInt32(Console.ReadLine());
 	
 
-	// void Cube(int[] cube) // вводим не возвращающий метод Cube с аргументом в виде массива, имя cube
-    // {
-	//   int counter = 0;
-	//   int length = cube.Length;
-	//   while (counter <  length)
-    //   {
-	//     cube[counter] = Convert.ToInt32(Math.Pow(counter, 3)); //MathPow метод Возвращает указанное число (counter), возведенное в указанную степень (3).
-	//     counter++;
-	//   }
-	// }
+// 	void Cube(int[] cube) // вводим не возвращающий метод Cube с аргументом в виде массива, имя cube
+//     {
+// 	  int counter = 0;
+// 	  int length = cube.Length;
+// 	  while (counter <  length)
+//       {
+// 	    cube[counter] = Convert.ToInt32(Math.Pow(counter, 3)); //MathPow метод Возвращает указанное число (counter), возведенное в указанную степень (3).
+// 	    counter++;
+// 	  }
+// 	}
 	
 
-	// void PrintArray(int[] coll) // вводим не возвращающий метод PrintArray с аргументом в виде массива, имя coll
-    // {
-	//   int count = coll.Length;
-	//   int index = 0;
-	//   while(index < count)
-    //   {
-	//     Console.Write(coll[index]+ " "); // " " вводим пробел
-	//     index++;
-	//   }
-	// } 
+// 	void PrintArray(int[] coll) // вводим не возвращающий метод PrintArray с аргументом в виде массива, имя coll
+//     {
+// 	  int count = coll.Length;
+// 	  int index = 0;
+// 	  while(index < count)
+//       {
+// 	    Console.Write(coll[index]+ " "); // " " вводим пробел
+// 	    index++;
+// 	  }
+// 	} 
 	
-	// int[] array = new int[cube+1];
+// 	int[] array = new int[cube+1];
     
-	// Cube(array); // вызов метода Cube
+// 	Cube(array); // вызов метода Cube
 
-	// PrintArray(array); // вызов метода PrintArray
+// 	PrintArray(array); // вызов метода PrintArray
 
 
 
@@ -285,31 +285,62 @@
 	// A (7,-5, 0); B (1,-1,9) -> 11.53
 	
 
-    Console.Clear();
-	int x1 = Coordinate("x", "A");
-	int y1 = Coordinate("y", "A");
-	int z1 = Coordinate("z", "A");
-	int x2 = Coordinate("x", "B");
-	int y2 = Coordinate("y", "B");
-	int z2 = Coordinate("z", "B");
+    // Console.Clear();
+	// int x1 = Coordinate("x", "A");
+	// int y1 = Coordinate("y", "A");
+	// int z1 = Coordinate("z", "A");
+	// int x2 = Coordinate("x", "B");
+	// int y2 = Coordinate("y", "B");
+	// int z2 = Coordinate("z", "B");
 	
 
-	int Coordinate(string coorName, string pointName)
-	{
-	    Console.Write($"Введите координату {coorName} точки {pointName}: ");
-	    return Convert.ToInt16(Console.ReadLine());
-	}
+	// int Coordinate(string coorName, string pointName)
+	// {
+	//     Console.Write($"Введите координату {coorName} точки {pointName}: ");
+	//     return Convert.ToInt16(Console.ReadLine());
+	// }
 	
 
-	double Result(double x1, double x2, double y1, double y2, double z1, double z2)
-	{
-	  return Math.Sqrt(Math.Pow((x2-x1), 2) + 
-	                   Math.Pow((y2-y1), 2) + 
-	                   Math.Pow((z2-z1), 2));
-	}
+	// double Result(double x1, double x2, double y1, double y2, double z1, double z2)
+	// {
+	//   return Math.Sqrt(Math.Pow((x2-x1), 2) + 
+	//                    Math.Pow((y2-y1), 2) + 
+	//                    Math.Pow((z2-z1), 2));
+	// }
 	
 
-	double LinesegmentLength =  Math.Round (Result(x1, x2, y1, y2, z1, z2), 2 );
+	// double LinesegmentLength =  Math.Round (Result(x1, x2, y1, y2, z1, z2), 2 );
 	
 
-	Console.WriteLine($"Длина отрезка  {LinesegmentLength}");
+	// Console.WriteLine($"Длина отрезка  {LinesegmentLength}");
+
+
+
+
+// Seminar 4
+// Задача 25: Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
+// 3, 5 -> 243 (3⁵)
+// 2, 4 -> 16
+
+ Console.Clear();
+
+int Exponenta(int numb_A, int numb_B) // один из вариантов решения
+{
+  int result = 1;
+  for(int i=1; i <= numb_B; i++)
+  {
+    result = result * numb_A;
+  }
+       return result;
+}
+
+  Console.Write("Введите число A: ");
+  int numb_A = Convert.ToInt32(Console.ReadLine());
+  Console.Write("Введите число B: ");
+  int numb_B = Convert.ToInt32(Console.ReadLine());
+
+  int exponenta = Exponenta(numb_A, numb_B);
+  Console.WriteLine("Ответ: " + exponenta);
+
+  double result1 = Math.Pow (numb_A, numb_B); // попроще вариант решения через Math.Pow (A, B)
+  Console.WriteLine("Ответ: " + result1);
