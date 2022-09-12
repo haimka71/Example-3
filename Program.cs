@@ -241,12 +241,12 @@
 // //ЗАДАЧА 23: Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
 // 	// 3 -> 1, 8, 27
 // 	// 5 -> 1, 8, 27, 64, 125
-	
+
 
 // 	Console.Clear();
 // 	Console.Write("Введите число: ");
 // 	int cube = Convert.ToInt32(Console.ReadLine());
-	
+
 
 // 	void Cube(int[] cube) // вводим не возвращающий метод Cube с аргументом в виде массива, имя cube
 //     {
@@ -258,7 +258,7 @@
 // 	    counter++;
 // 	  }
 // 	}
-	
+
 
 // 	void PrintArray(int[] coll) // вводим не возвращающий метод PrintArray с аргументом в виде массива, имя coll
 //     {
@@ -270,9 +270,9 @@
 // 	    index++;
 // 	  }
 // 	} 
-	
+
 // 	int[] array = new int[cube+1];
-    
+
 // 	Cube(array); // вызов метода Cube
 
 // 	PrintArray(array); // вызов метода PrintArray
@@ -281,38 +281,38 @@
 
 
 // Задача 21: Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
-	// A (3,6,8); B (2,1,-7), -> 15.84
-	// A (7,-5, 0); B (1,-1,9) -> 11.53
-	
+// A (3,6,8); B (2,1,-7), -> 15.84
+// A (7,-5, 0); B (1,-1,9) -> 11.53
 
-    // Console.Clear();
-	// int x1 = Coordinate("x", "A");
-	// int y1 = Coordinate("y", "A");
-	// int z1 = Coordinate("z", "A");
-	// int x2 = Coordinate("x", "B");
-	// int y2 = Coordinate("y", "B");
-	// int z2 = Coordinate("z", "B");
-	
 
-	// int Coordinate(string coorName, string pointName)
-	// {
-	//     Console.Write($"Введите координату {coorName} точки {pointName}: ");
-	//     return Convert.ToInt16(Console.ReadLine());
-	// }
-	
+// Console.Clear();
+// int x1 = Coordinate("x", "A");
+// int y1 = Coordinate("y", "A");
+// int z1 = Coordinate("z", "A");
+// int x2 = Coordinate("x", "B");
+// int y2 = Coordinate("y", "B");
+// int z2 = Coordinate("z", "B");
 
-	// double Result(double x1, double x2, double y1, double y2, double z1, double z2)
-	// {
-	//   return Math.Sqrt(Math.Pow((x2-x1), 2) + 
-	//                    Math.Pow((y2-y1), 2) + 
-	//                    Math.Pow((z2-z1), 2));
-	// }
-	
 
-	// double LinesegmentLength =  Math.Round (Result(x1, x2, y1, y2, z1, z2), 2 );
-	
+// int Coordinate(string coorName, string pointName)
+// {
+//     Console.Write($"Введите координату {coorName} точки {pointName}: ");
+//     return Convert.ToInt16(Console.ReadLine());
+// }
 
-	// Console.WriteLine($"Длина отрезка  {LinesegmentLength}");
+
+// double Result(double x1, double x2, double y1, double y2, double z1, double z2)
+// {
+//   return Math.Sqrt(Math.Pow((x2-x1), 2) + 
+//                    Math.Pow((y2-y1), 2) + 
+//                    Math.Pow((z2-z1), 2));
+// }
+
+
+// double LinesegmentLength =  Math.Round (Result(x1, x2, y1, y2, z1, z2), 2 );
+
+
+// Console.WriteLine($"Длина отрезка  {LinesegmentLength}");
 
 
 
@@ -322,25 +322,56 @@
 // 3, 5 -> 243 (3⁵)
 // 2, 4 -> 16
 
- Console.Clear();
+// Console.Clear();
 
-int Exponenta(int numb_A, int numb_B) // один из вариантов решения
+// int Exponenta(int numb_A, int numb_B) // один из вариантов решения, тупо перемножаем А -  B раз 
+// {
+//     int result = 1;
+//     for (int i = 1; i <= numb_B; i++)
+//     {
+//         result = result * numb_A;
+//     }
+//     return result;
+// }
+
+// Console.Write("Введите число A: ");
+// int numb_A = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите число B: ");
+// int numb_B = Convert.ToInt32(Console.ReadLine());
+
+// int exponenta = Exponenta(numb_A, numb_B);
+// Console.WriteLine("Ответ: " + exponenta);
+
+// double result1 = Math.Pow(numb_A, numb_B); // попроще вариант решения через Math.Pow (A, B)
+// Console.WriteLine("Ответ: " + result1);
+
+
+
+// Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+// 452 -> 11
+// 82 -> 10
+// 9012 -> 12
+
+
+Console.Clear();
+Console.Write("Введите число : ");
+int number_1 = Convert.ToInt32(Console.ReadLine());
+
+int SumNumber(int number_1)
 {
-  int result = 1;
-  for(int i=1; i <= numb_B; i++)
-  {
-    result = result * numb_A;
-  }
-       return result;
+
+    int counter = Convert.ToString(number_1).Length;
+    int temp = 0;
+    int result = 0;
+
+    for (int i = 0; i < counter; i++)
+    {
+        temp = number_1 - number_1 % 10;
+        result = result + (number_1 - temp);
+        number_1 = number_1 / 10;
+    }
+    return result;
 }
 
-  Console.Write("Введите число A: ");
-  int numb_A = Convert.ToInt32(Console.ReadLine());
-  Console.Write("Введите число B: ");
-  int numb_B = Convert.ToInt32(Console.ReadLine());
-
-  int exponenta = Exponenta(numb_A, numb_B);
-  Console.WriteLine("Ответ: " + exponenta);
-
-  double result1 = Math.Pow (numb_A, numb_B); // попроще вариант решения через Math.Pow (A, B)
-  Console.WriteLine("Ответ: " + result1);
+int sumNumber = SumNumber(number_1);
+Console.WriteLine("Сумма цифр в числе: " + sumNumber);
